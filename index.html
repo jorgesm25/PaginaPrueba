@@ -93,7 +93,7 @@
         </div>
     </div>
 
-    <form id="miFormulario">
+<form id="miFormulario">
   <input type="text" name="nombre" placeholder="Nombre" required>
   <input type="email" name="email" placeholder="Email" required>
   <textarea name="mensaje" placeholder="Mensaje" required></textarea>
@@ -107,7 +107,7 @@
     var data = {};
     formData.forEach((value, key) => data[key] = value);
 
-    fetch('https://script.google.com/macros/s/AKfycbzleTcPg6lrRHAMjghHO34D09FMyqJ1sjMHR0m7cTW8U-1es7nF255vOFlwP20-VF4P/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbwP6ykgwvPZp6BrR067Xp9hh2KeOe5Dd92cMuqFeiaXlxBaz1wbLybW4ZcBdx7aXdjd/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
@@ -116,6 +116,7 @@
     .then(text => alert('Datos enviados correctamente'))
     .catch(error => alert('Error al enviar los datos: ' + error));
   });
+</script>
 </script>
 
 
