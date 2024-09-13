@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Header INEGI Estilo</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <script src="scripts.js" defer></script>
+    
+</head>
+  <!-- Encabezado -->
+  <header class="header-container">
+    <div class="header-logo">
+        <img src="Graficas/INEGI.jpg" alt="Logo" class="logo">
+    </div>
+    <div class="header-blocks">
+        <div class="block block1"></div>
+        <div class="block block2"></div>
+    </div>
+</header>
+<body>
+    <h1>Gráficos de Homicidios en México</h1>
+    <label for="chart-select">Selecciona un gráfico:</label>
+    <select id="chart-select" onchange="changeChart(this.value)">
+        <option value="Graficas/homfemenino.html">Femenino</option>
+        <option value="Graficas/hommasculino.html">Masculino</option>
+        <option value="Graficas/homtotal.html">Total</option>
+    </select>
+    <iframe id="chart-iframe" src="Graficas/homfemenino.html" style="width: 100%; height: 600px; border: none;"></iframe>
+
+    <div class="espacio"></div> <!-- Espacio de 10px -->
+
+    <!-- Contenedor principal del carrusel -->
+    <div class="divisor-container">
+        <div class="contenedorimage-container">
+            <div class="slider">
+                <iframe src="Graficas/homfemenino.html" title="Gráfico Femenino"></iframe>
+                <iframe src="Graficas/hommasculino.html" title="Gráfico Masculino"></iframe>
+                <iframe src="Graficas/homtotal.html" title="Gráfico Total"></iframe>
+            </div>
+            <button class="prev" onclick="prevImage()">&#9665; Ant.</button>
+            <button class="next" onclick="nextImage()">Sig. &#9655;</button>
+        </div>
+    </div>
+
+    <div class="toggle-container">
+        <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar el mapa?</h3>
+        <div class="toggle-bar">
+            <input type="radio" id="view-buttons" name="view-toggle" value="buttons" checked onclick="toggleView('buttons')">
+            <label for="view-buttons">Botones</label>
+            <input type="radio" id="view-slider" name="view-toggle" value="slider" onclick="toggleView('slider')">
+            <label for="view-slider">Carrusel</label>
+        </div>
+        <div class="comments-section">
+            <h3>Escribe tus comentarios aquí:</h3>
+            <textarea id="user-comments" rows="4" cols="50" placeholder="Escribe tus comentarios aquí..."></textarea>
+        </div>
+    </div>
+
+    <h2>Gráfico 3D de violencia reportada por adolescentes</h2>
+    <iframe id="chart-iframe" src="Graficas/violencia3d.html" style="width: 90%; height: 600px; border: none;"></iframe>
+
+    <h2>Gráfico de pie de violencia reportada</h2>
+    <iframe id="chart-iframe" src="Graficas/violenciapie.html" style="width: 100%; height: 600px; border: none;"></iframe>
+
+    <h2>Gráfico de waffle de violencia reportada</h2>
+    <iframe id="chart-iframe" src="Graficas/waffle.html" style="width: 100%; height: 600px; border: none;"></iframe>
+
+    <div class="toggle-container">
+        <h3>¿Cuál gráfico consideras más eficaz?</h3>
+        <div class="toggle-bar">
+            <input type="radio" id="view-3d" name="view-toggle" value="3d" checked onclick="toggleView('3d')">
+            <label for="view-3d">Mapa 3D</label>
+            <input type="radio" id="view-pie" name="view-toggle" value="pie" onclick="toggleView('pie')">
+            <label for="view-pie">Pie interactivo</label>
+            <input type="radio" id="view-wa" name="view-toggle" value="wa" onclick="toggleView('wa')">
+            <label for="view-wa">Waffle</label>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enviar respuestas</h5>
+                </div>
+                <div class="modal-footer justify-content-center">
+                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
+                    <button type="button" id="btnEnviar" class="btn btn-dark" onclick="enviarDatos()">Enviar respuestas</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <form id="miFormulario">
+        <input type="text" name="nombre" placeholder="Nombre">
+        <input type="email" name="email" placeholder="Email">
+        <textarea name="mensaje" placeholder="Mensaje"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      
+      <script>
+        document.getElementById('miFormulario').addEventListener('submit', function(e) {
+          e.preventDefault();
+          const formData = new FormData(this);
+          fetch('AKfycbxWHfNaHCy_X_6Dt08BHn5nWmQ3MIfoBXJCwuTmOKdDlX3AYoK1omz0ijiFhIp0VFic', {
+            method: 'POST',
+            body: formData
+          }).then(response => response.text())
+            .then(data => alert(data));
+        });
+      </script>
+      
+
+<!--bloque de contacto -->
+<section id="contact">
+    <div class="container">
+        <h2>Contacto</h2>
+        
+        <div class="contact-info">
+            <!-- Contrataciones -->
+            <div class="contact-item">
+                <i class="fa fa-phone"></i> <!-- Ícono de teléfono -->
+                <p>Contrataciones: <a href="tel:+1226462165">1226462165</a></p>
+            </div>
+            
+            <!-- Donaciones -->
+            <div class="contact-item">
+                <i class="fa fa-globe"></i> <!-- Ícono de globo como alternativa -->
+                <p>Donaciones: <a href="https://www.paypal.com">PayPal</a></p>
+            </div>
+
+            <!-- Clases -->
+            <div class="contact-item">
+                <i class="fa fa-calendar"></i> <!-- Ícono de calendario -->
+                <p>Doy clases los jueves<br>no cobro mucho</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+  
+
+</body>
+
+</html>
