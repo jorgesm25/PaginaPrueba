@@ -94,23 +94,25 @@
     </div>
 
     <form id="miFormulario">
-        <input type="text" name="nombre" placeholder="Nombre">
-        <input type="email" name="email" placeholder="Email">
-        <textarea name="mensaje" placeholder="Mensaje"></textarea>
-        <button type="submit">Enviar</button>
-      </form>
-      
-      <script>
-        document.getElementById('miFormulario').addEventListener('submit', function(e) {
-          e.preventDefault();
-          const formData = new FormData(this);
-          fetch('AKfycbxWHfNaHCy_X_6Dt08BHn5nWmQ3MIfoBXJCwuTmOKdDlX3AYoK1omz0ijiFhIp0VFic', {
-            method: 'POST',
-            body: formData
-          }).then(response => response.text())
-            .then(data => alert(data));
-        });
-      </script>
+  <input type="text" name="nombre" placeholder="Nombre" required>
+  <input type="email" name="email" placeholder="Email" required>
+  <textarea name="mensaje" placeholder="Mensaje" required></textarea>
+  <button type="submit">Enviar</button>
+</form>
+
+<script>
+  document.getElementById('miFormulario').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const formData = new FormData(this);
+    fetch('AKfycbxu9C0x1RH1OAUX6kS4O5Rb1Y2s0wZby009QqZp9yAuD3xQMGYKDRecvYrdbg9vC51Y', {
+      method: 'POST',
+      body: formData
+    }).then(response => response.text())
+      .then(data => alert(data))
+      .catch(error => console.error('Error:', error));
+  });
+</script>
+
       
 
 <!--bloque de contacto -->
