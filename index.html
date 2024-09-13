@@ -100,16 +100,19 @@
   <button type="submit">Enviar</button>
 </form>
 
-<script>
-  document.getElementById('miFormulario').addEventListener('submit', function(e) {
+<script>document.getElementById('miFormulario').addEventListener('submit', function(e) {
     e.preventDefault();
-    const formData = new FormData(this);
-    fetch('https://script.google.com/macros/s/AKfycbxu9C0x1RH1OAUX6kS4O5Rb1Y2s0wZby009QqZp9yAuD3xQMGYKDRecvYrdbg9vC51Y/exec', {
+    var formData = new FormData(e.target);
+    var data = {};
+    formData.forEach((value, key) => data[key] = value);
+
+    fetch('https://script.google.com/macros/s/AKfycbwi1ZTSamwoaRZIkCvSiaWXTuLPh1G_H0ZfBZLHwkR74esRUOsG7QtXV22UMf37_Bq9/exec', {
       method: 'POST',
-      body: formData
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
     }).then(response => response.text())
-      .then(data => alert(data))
-      .catch(error => console.error('Error:', error));
+      .then(text => alert('Datos enviados correctamente'))
+      .catch(error => alert('Error al enviar los datos'));
   });
 </script>
 
