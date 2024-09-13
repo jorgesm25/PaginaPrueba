@@ -100,7 +100,8 @@
   <button type="submit">Enviar</button>
 </form>
 
-<script>document.getElementById('miFormulario').addEventListener('submit', function(e) {
+<script>
+  document.getElementById('miFormulario').addEventListener('submit', function(e) {
     e.preventDefault();
     var formData = new FormData(e.target);
     var data = {};
@@ -110,11 +111,13 @@
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
-    }).then(response => response.text())
-      .then(text => alert('Datos enviados correctamente'))
-      .catch(error => alert('Error al enviar los datos'));
+    })
+    .then(response => response.text())
+    .then(text => alert('Datos enviados correctamente'))
+    .catch(error => alert('Error al enviar los datos: ' + error));
   });
 </script>
+
 
       
 
