@@ -93,6 +93,7 @@
         </div>
     </div>
 
+
 <form id="miFormulario">
   <input type="text" name="nombre" placeholder="Nombre" required>
   <input type="email" name="email" placeholder="Email" required>
@@ -107,19 +108,22 @@
     var data = {};
     formData.forEach((value, key) => data[key] = value);
 
-    fetch('https://script.google.com/macros/s/AKfycby77JnJLGG1CZeqX6lNOT4iWDGmuciUtK2DpXaa_02SRhVFNqONSCer-myadAqTkXjQ/exec', {
+    fetch('https://script.google.com/macros/s/AKfycbzN_unSWzTcNDhtCltlVPLa4m647edzKgfi5AqQmwWYYMedEI8-ggyPo_7NsTXBcrkI/exec', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(data)
     })
     .then(response => response.text())
-    .then(text => alert('Datos enviados correctamente'))
-    .catch(error => alert('Error al enviar los datos: ' + error));
+    .then(text => {
+      // Muestra un mensaje de éxito al usuario
+      alert('Datos enviados correctamente');
+    })
+    .catch(error => {
+      // Muestra un mensaje de error al usuario
+      alert('Error al enviar los datos: ' + error);
+    });
   });
 </script>
-</script>
-
-
       
 
 <!--bloque de contacto -->
