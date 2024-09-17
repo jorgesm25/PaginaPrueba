@@ -21,92 +21,68 @@
 </header>
 <body>
     <h1>Gráficos de Homicidios en México</h1>
-    <label for="chart-select">Selecciona un gráfico:</label>
-    <select id="chart-select" onchange="changeChart(this.value)">
-        <option value="Graficas/homfemenino.html">Femenino</option>
-        <option value="Graficas/hommasculino.html">Masculino</option>
-        <option value="Graficas/homtotal.html">Total</option>
-    </select>
-    <iframe id="chart-iframe" src="Graficas/homfemenino.html" style="width: 100%; height: 600px; border: none;"></iframe>
+    <!-- Selección de gráfico -->
+<label for="chart-select">Selecciona un gráfico:</label>
+<select id="chart-select" onchange="changeChart(this.value)">
+    <option value="Graficas/homfemenino.html">Femenino</option>
+    <option value="Graficas/hommasculino.html">Masculino</option>
+    <option value="Graficas/homtotal.html">Total</option>
+</select>
+<iframe id="chart-iframe" src="Graficas/homfemenino.html" style="width: 100%; height: 600px; border: none;"></iframe>
 
-    <div class="espacio"></div> <!-- Espacio de 10px -->
+<div class="espacio"></div> <!-- Espacio de 10px -->
 
-    <!-- Contenedor principal del carrusel -->
-    <div class="divisor-container">
-        <div class="contenedorimage-container">
-            <div class="slider">
-                <iframe src="Graficas/homfemenino.html" title="Gráfico Femenino"></iframe>
-                <iframe src="Graficas/hommasculino.html" title="Gráfico Masculino"></iframe>
-                <iframe src="Graficas/homtotal.html" title="Gráfico Total"></iframe>
-            </div>
-            <button class="prev" onclick="prevImage()">&#9665; Ant.</button>
-            <button class="next" onclick="nextImage()">Sig. &#9655;</button>
+<!-- Contenedor principal del carrusel -->
+<div class="divisor-container">
+    <div class="contenedorimage-container">
+        <div class="slider">
+            <iframe src="Graficas/homfemenino.html" title="Gráfico Femenino"></iframe>
+            <iframe src="Graficas/hommasculino.html" title="Gráfico Masculino"></iframe>
+            <iframe src="Graficas/homtotal.html" title="Gráfico Total"></iframe>
         </div>
+        <button class="prev" onclick="prevImage()">&#9665; Ant.</button>
+        <button class="next" onclick="nextImage()">Sig. &#9655;</button>
     </div>
+</div>
 
-   <!-- <div class="toggle-container">
-        <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar el mapa?</h3>
-        <div class="toggle-bar">
-            <input type="radio" id="view-buttons" name="view-toggle" value="buttons" checked onclick="toggleView('buttons')">
-            <label for="view-buttons">Botones</label>
-            <input type="radio" id="view-slider" name="view-toggle" value="slider" onclick="toggleView('slider')">
-            <label for="view-slider">Carrusel</label>
-        </div>--> 
-        <div class="comments-section">
-            <h3>Escribe tus comentarios aquí:</h3>
-            <textarea id="user-comments" rows="4" cols="50" placeholder="Escribe tus comentarios aquí..."></textarea>
-        </div>
-    </div>
-
-    <h2>Gráfico 3D de violencia reportada por adolescentes</h2>
-    <iframe id="chart-iframe" src="Graficas/violencia3d.html" style="width: 90%; height: 600px; border: none;"></iframe>
-
-    <h2>Gráfico de pie de violencia reportada</h2>
-    <iframe id="chart-iframe" src="Graficas/violenciapie.html" style="width: 100%; height: 600px; border: none;"></iframe>
-
-    <h2>Gráfico de waffle de violencia reportada</h2>
-    <iframe id="chart-iframe" src="Graficas/waffle.html" style="width: 100%; height: 600px; border: none;"></iframe>
-
-   <!--  <div class="toggle-container">
-        <h3>¿Cuál gráfico consideras más eficaz?</h3>
-        <div class="toggle-bar">
-            <input type="radio" id="view-3d" name="view-toggle" value="3d" checked onclick="toggleView('3d')">
-            <label for="view-3d">Mapa 3D</label>
-            <input type="radio" id="view-pie" name="view-toggle" value="pie" onclick="toggleView('pie')">
-            <label for="view-pie">Pie interactivo</label>
-            <input type="radio" id="view-wa" name="view-toggle" value="wa" onclick="toggleView('wa')">
-            <label for="view-wa">Waffle</label>
-        </div>
-    </div>--> 
-
-
-<!-- modify this form HTML and place wherever you want your form --> 
-<form
-  action="https://formspree.io/f/mldrkvjb"
-  method="POST"
->
-  <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar el mapa?</h3>
-  <div class="toggle-bar">
+<!-- Botones para elegir entre carrusel o botones -->
+<h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar el mapa?</h3>
+<div class="toggle-bar">
     <input type="radio" id="view-buttons" name="map-presentation" value="Botones" checked>
     <label for="view-buttons">Botones</label>
     <input type="radio" id="view-slider" name="map-presentation" value="diapositivas">
     <label for="view-slider">Carrusel</label>
-  </div>
-  
-  <h3>¿Cuál gráfico consideras más eficaz?</h3>
-  <div class="toggle-bar">
+</div>
+
+<!-- Imágenes de los gráficos -->
+<h2>Gráfico 3D de violencia reportada por adolescentes</h2>
+<iframe id="chart-iframe" src="Graficas/violencia3d.html" style="width: 90%; height: 600px; border: none;"></iframe>
+
+<h2>Gráfico de pie de violencia reportada</h2>
+<iframe id="chart-iframe" src="Graficas/violenciapie.html" style="width: 100%; height: 600px; border: none;"></iframe>
+
+<h2>Gráfico de waffle de violencia reportada</h2>
+<iframe id="chart-iframe" src="Graficas/waffle.html" style="width: 100%; height: 600px; border: none;"></iframe>
+
+<!-- Botones para elegir el tipo de gráfico -->
+<h3>¿Cuál gráfico consideras más eficaz?</h3>
+<div class="toggle-bar">
     <input type="radio" id="view-3d" name="chart-type" value="3d" checked>
     <label for="view-3d">Mapa 3D</label>
     <input type="radio" id="view-pie" name="chart-type" value="pie">
     <label for="view-pie">Pie interactivo</label>
     <input type="radio" id="view-wa" name="chart-type" value="wa">
     <label for="view-wa">Waffle</label>
-  </div>
-  
+</div>
+
+<!-- Botón de envío -->
+<form
+  action="https://formspree.io/f/mldrkvjb"
+  method="POST"
+  style="margin-top: 20px;"  <!-- Adds some space above the form -->
+>
   <button type="submit">Send</button>
 </form>
-
-      
 
 <!--bloque de contacto -->
 <section id="contact">
