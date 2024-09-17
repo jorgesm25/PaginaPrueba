@@ -80,22 +80,32 @@
     </div>
 
 
-<!-- modify this form HTML and place wherever you want your form -->
+<!-- modify this form HTML and place wherever you want your form --> 
 <form
   action="https://formspree.io/f/mldrkvjb"
   method="POST"
 >
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
+  <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar el mapa?</h3>
+  <div class="toggle-bar">
+    <input type="radio" id="view-buttons" name="map-presentation" value="buttons" checked>
+    <label for="view-buttons">Botones</label>
+    <input type="radio" id="view-slider" name="map-presentation" value="slider">
+    <label for="view-slider">Carrusel</label>
+  </div>
+  
+  <h3>¿Cuál gráfico consideras más eficaz?</h3>
+  <div class="toggle-bar">
+    <input type="radio" id="view-3d" name="chart-type" value="3d" checked>
+    <label for="view-3d">Mapa 3D</label>
+    <input type="radio" id="view-pie" name="chart-type" value="pie">
+    <label for="view-pie">Pie interactivo</label>
+    <input type="radio" id="view-wa" name="chart-type" value="wa">
+    <label for="view-wa">Waffle</label>
+  </div>
+  
   <button type="submit">Send</button>
 </form>
+
       
 
 <!--bloque de contacto -->
