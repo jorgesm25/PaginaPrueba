@@ -78,22 +78,31 @@ document.getElementById('send-button').addEventListener('click', function() {
     const selectedOption = document.querySelector('input[name="view-toggle"]:checked').value;
 
     // Datos a enviar
+    <script>
+document.getElementById('send-button').addEventListener('click', function() {
+    // Captura la opción seleccionada
+    const selectedOption = document.querySelector('input[name="view-toggle"]:checked').value;
+
+    // Datos a enviar
     const data = {
-        email: 'example@example.com',  // Coloca una dirección de correo válida aquí o usa un campo en el formulario si lo prefieres.
+        email: 'example@example.com',  // Puedes ajustar esto según sea necesario
         message: `La selección del usuario es: ${selectedOption}`
     };
 
-    // Enviar los datos usando AJAX
+    // Crear una nueva instancia de XMLHttpRequest
     const xhr = new XMLHttpRequest();
     xhr.open('POST', 'https://formspree.io/f/mldrkvjb', true);
     xhr.setRequestHeader('Content-Type', 'application/json');
     xhr.setRequestHeader('Accept', 'application/json');
+
+    // Enviar los datos en formato JSON
     xhr.send(JSON.stringify(data));
 
     // Manejar la respuesta del servidor
     xhr.onload = function() {
         if (xhr.status === 200) {
-            document.getElementById('confirmation-message').innerText = 'Gracias por tu selección. Hemos recibido tu respuesta.';
+            // Recargar la página después del envío exitoso
+            window.location.reload();
         } else {
             document.getElementById('confirmation-message').innerText = 'Hubo un problema al enviar tu respuesta. Inténtalo de nuevo más tarde.';
         }
@@ -105,4 +114,5 @@ document.getElementById('send-button').addEventListener('click', function() {
     };
 });
 </script>
+
 
