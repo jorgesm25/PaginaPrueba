@@ -93,22 +93,21 @@
         </div>
     </div>
 
-<!-- modify this form HTML and place wherever you want your form -->
-<form
-  action="https://formspree.io/f/mldrkvjb"
-  method="POST"
->
-  <label>
-    Your email:
-    <input type="email" name="email">
-  </label>
-  <label>
-    Your message:
-    <textarea name="message"></textarea>
-  </label>
-  <!-- your other form fields go here -->
-  <button type="submit">Send</button>
+<!-- Formulario para capturar la selección de gráficos -->
+<form action="https://formspree.io/f/mldrkvjb" method="POST" id="formularioGraficos">
+  <label for="selectedChart">Selecciona un gráfico:</label>
+  <select id="selectedChart" name="chart">
+      <option value="3d">Mapa 3D</option>
+      <option value="pie">Pie interactivo</option>
+      <option value="waffle">Waffle</option>
+  </select>
+
+  <label for="user-comments">Comentarios:</label>
+  <textarea id="user-comments" name="comments" rows="4" cols="50" placeholder="Escribe tus comentarios aquí..."></textarea>
+
+  <button type="submit">Enviar</button>
 </form>
+
       
 
 <!--bloque de contacto -->
