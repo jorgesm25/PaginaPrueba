@@ -69,3 +69,40 @@ function nextImage() {
 
 // Inicializar la galería
 showImage(index);
+
+
+// Enviar informacion
+<script>
+document.getElementById('send-button').addEventListener('click', function() {
+    // Capturar la selección del usuario
+    const selectedOption = document.querySelector('input[name="view-toggle"]:checked').value;
+
+    // Datos a enviar
+    const data = {
+        email: 'example@example.com',  // Coloca una dirección de correo válida aquí o usa un campo en el formulario si lo prefieres.
+        message: `La selección del usuario es: ${selectedOption}`
+    };
+
+    // Enviar los datos usando AJAX
+    const xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://formspree.io/f/mldrkvjb', true);
+    xhr.setRequestHeader('Content-Type', 'application/json');
+    xhr.setRequestHeader('Accept', 'application/json');
+    xhr.send(JSON.stringify(data));
+
+    // Manejar la respuesta del servidor
+    xhr.onload = function() {
+        if (xhr.status === 200) {
+            document.getElementById('confirmation-message').innerText = 'Gracias por tu selección. Hemos recibido tu respuesta.';
+        } else {
+            document.getElementById('confirmation-message').innerText = 'Hubo un problema al enviar tu respuesta. Inténtalo de nuevo más tarde.';
+        }
+    };
+
+    // Manejar errores de red
+    xhr.onerror = function() {
+        document.getElementById('confirmation-message').innerText = 'Hubo un problema con la solicitud. Inténtalo de nuevo más tarde.';
+    };
+});
+</script>
+
