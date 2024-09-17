@@ -70,28 +70,3 @@ function nextImage() {
 // Inicializar la galería
 showImage(index);
 
-
-// Enviar informacion
-<script>
-  function updateFormMessage() {
-    // Obtiene el valor del radio seleccionado
-    const selectedOption = document.querySelector('input[name="view-toggle"]:checked');
-    
-    // Verifica si hay una opción seleccionada
-    if (selectedOption) {
-      // Obtiene el valor del radio seleccionado
-      const message = selectedOption.nextElementSibling.textContent;
-
-      // Actualiza el campo de mensaje en el formulario
-      document.getElementById('message').value = message;
-    }
-  }
-
-  // Asocia la función al evento click de los radios
-  document.querySelectorAll('input[name="view-toggle"]').forEach(input => {
-    input.addEventListener('change', updateFormMessage);
-  });
-
-  // Establece el valor inicial cuando se carga la página
-  window.addEventListener('load', updateFormMessage);
-</script>
