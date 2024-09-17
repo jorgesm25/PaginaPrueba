@@ -73,46 +73,25 @@ showImage(index);
 
 // Enviar informacion
 <script>
-document.getElementById('send-button').addEventListener('click', function() {
-    // Capturar la selección del usuario
-    const selectedOption = document.querySelector('input[name="view-toggle"]:checked').value;
+  function updateFormMessage() {
+    // Obtiene el valor del radio seleccionado
+    const selectedOption = document.querySelector('input[name="view-toggle"]:checked');
+    
+    // Verifica si hay una opción seleccionada
+    if (selectedOption) {
+      // Obtiene el valor del radio seleccionado
+      const message = selectedOption.nextElementSibling.textContent;
 
-    // Datos a enviar
-    <script>
-document.getElementById('send-button').addEventListener('click', function() {
-    // Captura la opción seleccionada
-    const selectedOption = document.querySelector('input[name="view-toggle"]:checked').value;
+      // Actualiza el campo de mensaje en el formulario
+      document.getElementById('message').value = message;
+    }
+  }
 
-    // Datos a enviar
-    const data = {
-        email: 'example@example.com',  // Puedes ajustar esto según sea necesario
-        message: `La selección del usuario es: ${selectedOption}`
-    };
+  // Asocia la función al evento click de los radios
+  document.querySelectorAll('input[name="view-toggle"]').forEach(input => {
+    input.addEventListener('change', updateFormMessage);
+  });
 
-    // Crear una nueva instancia de XMLHttpRequest
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', 'https://formspree.io/f/mldrkvjb', true);
-    xhr.setRequestHeader('Content-Type', 'application/json');
-    xhr.setRequestHeader('Accept', 'application/json');
-
-    // Enviar los datos en formato JSON
-    xhr.send(JSON.stringify(data));
-
-    // Manejar la respuesta del servidor
-    xhr.onload = function() {
-        if (xhr.status === 200) {
-            // Recargar la página después del envío exitoso
-            window.location.reload();
-        } else {
-            document.getElementById('confirmation-message').innerText = 'Hubo un problema al enviar tu respuesta. Inténtalo de nuevo más tarde.';
-        }
-    };
-
-    // Manejar errores de red
-    xhr.onerror = function() {
-        document.getElementById('confirmation-message').innerText = 'Hubo un problema con la solicitud. Inténtalo de nuevo más tarde.';
-    };
-});
+  // Establece el valor inicial cuando se carga la página
+  window.addEventListener('load', updateFormMessage);
 </script>
-
-
