@@ -7,31 +7,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
-    
 </head>
-  <!-- Encabezado -->
-  <header class="header-container">
-    <div class="header-logo">
-        <img src="Graficas/INEGI.jpg" alt="Logo" class="logo">
-    </div>
-    <div class="header-blocks">
-        <div class="block block1"></div>
-        <div class="block block2"></div>
-    </div>
-</header>
 <body>
+    <header class="header-container">
+        <div class="header-logo">
+            <img src="Graficas/INEGI.jpg" alt="Logo" class="logo">
+        </div>
+        <div class="header-blocks">
+            <div class="block block1"></div>
+            <div class="block block2"></div>
+        </div>
+    </header>
+
     <h1>Gráficos de Homicidios en México</h1>
     <label for="chart-select">Selecciona un gráfico:</label>
-    <select id="chart-select" onchange="changeChart(this.value)">
-        <option value="Graficas/homfemenino.html">Femenino</option>
-        <option value="Graficas/hommasculino.html">Masculino</option>
-        <option value="Graficas/homtotal.html">Total</option>
+    <select id="chart-select" onchange="updateChartSelection(this.value)">
+        <option value="Femenino">Femenino</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Total">Total</option>
     </select>
     <iframe id="chart-iframe" src="Graficas/homfemenino.html" style="width: 100%; height: 600px; border: none;"></iframe>
 
     <div class="espacio"></div> <!-- Espacio de 10px -->
 
-    <!-- Contenedor principal del carrusel -->
     <div class="divisor-container">
         <div class="contenedorimage-container">
             <div class="slider">
@@ -47,9 +45,9 @@
     <div class="toggle-container">
         <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar el mapa?</h3>
         <div class="toggle-bar">
-            <input type="radio" id="view-buttons" name="view-toggle" value="buttons" checked onclick="toggleView('buttons')">
+            <input type="radio" id="view-buttons" name="view-toggle" value="buttons" checked onclick="updateView('buttons')">
             <label for="view-buttons">Botones</label>
-            <input type="radio" id="view-slider" name="view-toggle" value="slider" onclick="toggleView('slider')">
+            <input type="radio" id="view-slider" name="view-toggle" value="slider" onclick="updateView('slider')">
             <label for="view-slider">Carrusel</label>
         </div>
         <div class="comments-section">
@@ -70,75 +68,60 @@
     <div class="toggle-container">
         <h3>¿Cuál gráfico consideras más eficaz?</h3>
         <div class="toggle-bar">
-            <input type="radio" id="view-3d" name="view-toggle" value="3d" checked onclick="toggleView('3d')">
+            <input type="radio" id="view-3d" name="view-toggle" value="3d" onclick="updateChartSelection('3d')">
             <label for="view-3d">Mapa 3D</label>
-            <input type="radio" id="view-pie" name="view-toggle" value="pie" onclick="toggleView('pie')">
+            <input type="radio" id="view-pie" name="view-toggle" value="pie" onclick="updateChartSelection('pie')">
             <label for="view-pie">Pie interactivo</label>
-            <input type="radio" id="view-wa" name="view-toggle" value="wa" onclick="toggleView('wa')">
-            <label for="view-wa">Waffle</label>
+            <input type="radio" id="view-waffle" name="view-toggle" value="waffle" onclick="updateChartSelection('waffle')">
+            <label for="view-waffle">Waffle</label>
         </div>
     </div>
 
-    <div class="modal fade" id="modalCRUD" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Enviar respuestas</h5>
+    <!-- Formulario modificado -->
+    <form action="https://formspree.io/f/mldrkvjb" method="POST">
+        <!-- Campos ocultos para enviar datos -->
+        <input type="hidden" name="chartSelection" id="chartSelection" value="">
+        <input type="hidden" name="viewSelection" id="viewSelection" value="">
+        <input type="hidden" name="comments" id="comments" value="">
+        <button type="submit" onclick="submitForm()">Send</button>
+    </form>
+
+    <!-- Bloque de contacto -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fa fa-phone"></i>
+                    <p>Contrataciones: <a href="tel:+1226462165">1226462165</a></p>
                 </div>
-                <div class="modal-footer justify-content-center">
-                    <button type="button" class="btn btn-light" data-dismiss="modal">Cancelar</button>
-                    <button type="button" id="btnEnviar" class="btn btn-dark" onclick="enviarDatos()">Enviar respuestas</button>
+                <div class="contact-item">
+                    <i class="fa fa-globe"></i>
+                    <p>Donaciones: <a href="https://www.paypal.com">PayPal</a></p>
+                </div>
+                <div class="contact-item">
+                    <i class="fa fa-calendar"></i>
+                    <p>Doy clases los jueves<br>no cobro mucho</p>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-<!-- Formulario para capturar la selección de gráficos -->
-<form action="https://formspree.io/f/mldrkvjb" method="POST" id="formularioGraficos">
-  <label for="selectedChart">Selecciona un gráfico:</label>
-  <select id="selectedChart" name="chart">
-      <option value="3d">Mapa 3D</option>
-      <option value="pie">Pie interactivo</option>
-      <option value="waffle">Waffle</option>
-  </select>
+    <script>
+        // Función para actualizar la selección del gráfico
+        function updateChartSelection(value) {
+            document.getElementById('chartSelection').value = value;
+        }
 
-  <label for="user-comments">Comentarios:</label>
-  <textarea id="user-comments" name="comments" rows="4" cols="50" placeholder="Escribe tus comentarios aquí..."></textarea>
+        // Función para actualizar la selección de la vista
+        function updateView(value) {
+            document.getElementById('viewSelection').value = value;
+        }
 
-  <button type="submit">Enviar</button>
-</form>
-
-      
-
-<!--bloque de contacto -->
-<section id="contact">
-    <div class="container">
-        <h2>Contacto</h2>
-        
-        <div class="contact-info">
-            <!-- Contrataciones -->
-            <div class="contact-item">
-                <i class="fa fa-phone"></i> <!-- Ícono de teléfono -->
-                <p>Contrataciones: <a href="tel:+1226462165">1226462165</a></p>
-            </div>
-            
-            <!-- Donaciones -->
-            <div class="contact-item">
-                <i class="fa fa-globe"></i> <!-- Ícono de globo como alternativa -->
-                <p>Donaciones: <a href="https://www.paypal.com">PayPal</a></p>
-            </div>
-
-            <!-- Clases -->
-            <div class="contact-item">
-                <i class="fa fa-calendar"></i> <!-- Ícono de calendario -->
-                <p>Doy clases los jueves<br>no cobro mucho</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-  
-
+        // Actualiza el campo de comentarios cuando el formulario se envía
+        function submitForm() {
+            document.getElementById('comments').value = document.getElementById('user-comments').value;
+        }
+    </script>
 </body>
-
 </html>
