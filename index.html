@@ -57,18 +57,21 @@
 </script>
 
 <div class="espacio"></div> <!-- Espacio de 10px -->
-<div class="espacio"></div> <!-- Espacio de 10px -->
-    <div class="divisor-container">
-    <label for="chart-select">Selecciona un gráfico:</label>
-    <select id="chart-select" onchange="changeChart(this.value)">
-        <option value="Graficas/homfemenino.html">Femenino</option>
-        <option value="Graficas/hommasculino.html">Masculino</option>
-        <option value="Graficas/homtotal.html">Total</option>
-    </select>
-    <iframe id="chart-iframe" src="Graficas/homfemenino.html" style="width: 100%; height: 600px; border: none;"></iframe>
 
         
     <div class="espacio"></div> <!-- Espacio de 10px -->
+<!-- Contenedor principal del carrusel -->
+    
+        <div class="contenedorimage-container">
+            <div class="slider">
+                <iframe src="Graficas/homfemenino.html" title="Gráfico Femenino"></iframe>
+                <iframe src="Graficas/hommasculino.html" title="Gráfico Masculino"></iframe>
+                <iframe src="Graficas/homtotal.html" title="Gráfico Total"></iframe>
+            </div>
+            <button class="prev" onclick="prevImage()">&#9665; Ant.</button>
+            <button class="next" onclick="nextImage()">Sig. &#9655;</button>
+        </div>
+    </div>
  <!-- Inicia la encuesta -->
   <form
   action="https://formspree.io/f/mldrkvjb"
@@ -81,19 +84,16 @@
     <input type="radio" id="view-Mapa" name="map-presentation" value="Mapas de colores">
     <label for="view-Mapa">Mapa</label>
   </div>    
-      
-    <!-- Contenedor principal del carrusel -->
     
-        <div class="contenedorimage-container">
-            <div class="slider">
-                <iframe src="Graficas/homfemenino.html" title="Gráfico Femenino"></iframe>
-                <iframe src="Graficas/hommasculino.html" title="Gráfico Masculino"></iframe>
-                <iframe src="Graficas/homtotal.html" title="Gráfico Total"></iframe>
-            </div>
-            <button class="prev" onclick="prevImage()">&#9665; Ant.</button>
-            <button class="next" onclick="nextImage()">Sig. &#9655;</button>
-        </div>
-    </div>
+<div class="espacio"></div> <!-- Espacio de 10px -->
+    <div class="divisor-container">
+    <label for="chart-select">Selecciona un gráfico:</label>
+    <select id="chart-select" onchange="changeChart(this.value)">
+        <option value="Graficas/homfemenino.html">Femenino</option>
+        <option value="Graficas/hommasculino.html">Masculino</option>
+        <option value="Graficas/homtotal.html">Total</option>
+    </select>
+    <iframe id="chart-iframe" src="Graficas/homfemenino.html" style="width: 100%; height: 600px; border: none;"></iframe>
     
    <!-- <div class="toggle-container">
         <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar el mapa?</h3>
@@ -145,7 +145,7 @@
     <label for="view-wa">Waffle</label>
   </div>
   
-  <button type="submit" formaction="https://formspree.io/f/mldrkvjb">Send</button>
+<button type="submit">Send</button>
 </form>
 
       
