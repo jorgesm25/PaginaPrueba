@@ -69,7 +69,19 @@
 
         
     <div class="espacio"></div> <!-- Espacio de 10px -->
-
+ <!-- Inicia la encuesta -->
+  <form
+  action="https://formspree.io/f/mldrkvjb"
+  method="POST"
+>
+  <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar la serie de tiempo?</h3>
+  <div class="toggle-bar">
+    <input type="radio" id="view-lineas" name="map-presentation" value="Lineas de tiempo" checked>
+    <label for="view-lineas">Lineas</label>
+    <input type="radio" id="view-Mapa" name="map-presentation" value="Mapas de colores">
+    <label for="view-Mapa">Mapa</label>
+  </div>    
+      
     <!-- Contenedor principal del carrusel -->
     
         <div class="contenedorimage-container">
@@ -121,18 +133,7 @@
 
 <!-- modify this form HTML and place wherever you want your form --> 
 
-    <!-- Inicia la encuesta -->
-  <form
-  action="https://formspree.io/f/mldrkvjb"
-  method="POST"
->
-  <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar la serie de tiempo?</h3>
-  <div class="toggle-bar">
-    <input type="radio" id="view-lineas" name="map-presentation" value="Lineas de tiempo" checked>
-    <label for="view-lineas">Lineas</label>
-    <input type="radio" id="view-Mapa" name="map-presentation" value="Mapas de colores">
-    <label for="view-Mapa">Mapa</label>
-  </div>    
+   
     
   <h3>¿Cuál gráfico consideras más eficaz?</h3>
   <div class="toggle-bar">
@@ -144,7 +145,7 @@
     <label for="view-wa">Waffle</label>
   </div>
   
-  <button type="submit">Send</button>
+  <button type="submit" formaction="https://formspree.io/f/mldrkvjb">Send</button>
 </form>
 
       
