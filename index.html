@@ -7,47 +7,58 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
+    
 </head>
-<body>
-    <!-- Encabezado -->
-    <header class="header-container">
-        <div class="header-logo">
-            <img src="Graficas/INEGI.jpg" alt="Logo" class="logo">
-        </div>
-        <div class="header-blocks">
-            <div class="block block1"></div>
-            <div class="block block2"></div>
-        </div>
-    </header>
-
-    <div class="divisor-container">
-        <h1>Gráficos de Homicidios en México</h1>
-        <!-- TABLEAU -->
-        <div class='tableauPlaceholder' id='viz1726682336668' style='position: relative; width: 50%; height: 400px;'>
-            <noscript>
-                <a href='#'>
-                    <img alt='Sheet 1 ' src='https://public.tableau.com/static/images/FJ/FJK7FFDQ6/1_rss.png' style='border: none' />
-                </a>
-            </noscript>
-            <object class='tableauViz' style='display:none;'>
-                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-                <param name='embed_code_version' value='3' />
-                <param name='path' value='shared/FJK7FFDQ6' />
-                <param name='toolbar' value='yes' />
-                <param name='static_image' value='https://public.tableau.com/static/images/FJ/FJK7FFDQ6/1.png' />
-                <param name='animate_transition' value='yes' />
-                <param name='display_static_image' value='yes' />
-                <param name='display_spinner' value='yes' />
-                <param name='display_overlay' value='yes' />
-                <param name='display_count' value='yes' />
-                <param name='language' value='es-ES' />
-            </object>
-        </div>
+  <!-- Encabezado -->
+  <header class="header-container">
+    <div class="header-logo">
+        <img src="Graficas/INEGI.jpg" alt="Logo" class="logo">
     </div>
-
-    <div class="espacio"></div> <!-- Espacio de 10px -->
+    <div class="header-blocks">
+        <div class="block block1"></div>
+        <div class="block block2"></div>
+    </div>
+</header>
+<body>
 
     <div class="divisor-container">
+    <h1>Gráficos de Homicidios en México</h1>
+  <!-- TABLEAU -->
+  
+<div class='tableauPlaceholder' id='viz1726682336668' style='position: relative; width: 50%; height: 400px;'>
+    <noscript>
+        <a href='#'>
+            <img alt='Sheet 1 ' src='https://public.tableau.com/static/images/FJ/FJK7FFDQ6/1_rss.png' style='border: none' />
+        </a>
+    </noscript>
+    <object class='tableauViz' style='display:none;'>
+        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+        <param name='embed_code_version' value='3' />
+        <param name='path' value='shared/FJK7FFDQ6' />
+        <param name='toolbar' value='yes' />
+        <param name='static_image' value='https://public.tableau.com/static/images/FJ/FJK7FFDQ6/1.png' />
+        <param name='animate_transition' value='yes' />
+        <param name='display_static_image' value='yes' />
+        <param name='display_spinner' value='yes' />
+        <param name='display_overlay' value='yes' />
+        <param name='display_count' value='yes' />
+        <param name='language' value='es-ES' />
+    </object>
+</div>
+</div>
+<script type='text/javascript'>
+    var divElement = document.getElementById('viz1726682336668');
+    var vizElement = divElement.getElementsByTagName('object')[0];
+    vizElement.style.width='100%';  // Se ajusta al 100% del contenedor
+    vizElement.style.height='400px';  // Altura fija de 400 píxeles
+    var scriptElement = document.createElement('script');
+    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
+    vizElement.parentNode.insertBefore(scriptElement, vizElement);
+</script>
+
+<div class="espacio"></div> <!-- Espacio de 10px -->
+
+ <div class="divisor-container">
         <!-- Contenedor principal del carrusel -->
         <div class="contenedorimage-container">
             <div class="slider">
@@ -139,4 +150,4 @@
     </section>
 
 </body>
-</html>
+</html>    
