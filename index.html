@@ -7,61 +7,48 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="styles.css">
     <script src="scripts.js" defer></script>
-    
 </head>
-  <!-- Encabezado -->
-  <header class="header-container">
-    <div class="header-logo">
-        <img src="Graficas/INEGI.jpg" alt="Logo" class="logo">
-    </div>
-    <div class="header-blocks">
-        <div class="block block1"></div>
-        <div class="block block2"></div>
-    </div>
-</header>
 <body>
+    <!-- Encabezado -->
+    <header class="header-container">
+        <div class="header-logo">
+            <img src="Graficas/INEGI.jpg" alt="Logo" class="logo">
+        </div>
+        <div class="header-blocks">
+            <div class="block block1"></div>
+            <div class="block block2"></div>
+        </div>
+    </header>
 
     <div class="divisor-container">
-    <h1>Gráficos de Homicidios en México</h1>
-  <!-- TABLEAU -->
-  
-<div class='tableauPlaceholder' id='viz1726682336668' style='position: relative; width: 50%; height: 400px;'>
-    <noscript>
-        <a href='#'>
-            <img alt='Sheet 1 ' src='https://public.tableau.com/static/images/FJ/FJK7FFDQ6/1_rss.png' style='border: none' />
-        </a>
-    </noscript>
-    <object class='tableauViz' style='display:none;'>
-        <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
-        <param name='embed_code_version' value='3' />
-        <param name='path' value='shared/FJK7FFDQ6' />
-        <param name='toolbar' value='yes' />
-        <param name='static_image' value='https://public.tableau.com/static/images/FJ/FJK7FFDQ6/1.png' />
-        <param name='animate_transition' value='yes' />
-        <param name='display_static_image' value='yes' />
-        <param name='display_spinner' value='yes' />
-        <param name='display_overlay' value='yes' />
-        <param name='display_count' value='yes' />
-        <param name='language' value='es-ES' />
-    </object>
-</div>
-</div>
-<script type='text/javascript'>
-    var divElement = document.getElementById('viz1726682336668');
-    var vizElement = divElement.getElementsByTagName('object')[0];
-    vizElement.style.width='100%';  // Se ajusta al 100% del contenedor
-    vizElement.style.height='400px';  // Altura fija de 400 píxeles
-    var scriptElement = document.createElement('script');
-    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
-    vizElement.parentNode.insertBefore(scriptElement, vizElement);
-</script>
+        <h1>Gráficos de Homicidios en México</h1>
+        <!-- TABLEAU -->
+        <div class='tableauPlaceholder' id='viz1726682336668' style='position: relative; width: 50%; height: 400px;'>
+            <noscript>
+                <a href='#'>
+                    <img alt='Sheet 1 ' src='https://public.tableau.com/static/images/FJ/FJK7FFDQ6/1_rss.png' style='border: none' />
+                </a>
+            </noscript>
+            <object class='tableauViz' style='display:none;'>
+                <param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' />
+                <param name='embed_code_version' value='3' />
+                <param name='path' value='shared/FJK7FFDQ6' />
+                <param name='toolbar' value='yes' />
+                <param name='static_image' value='https://public.tableau.com/static/images/FJ/FJK7FFDQ6/1.png' />
+                <param name='animate_transition' value='yes' />
+                <param name='display_static_image' value='yes' />
+                <param name='display_spinner' value='yes' />
+                <param name='display_overlay' value='yes' />
+                <param name='display_count' value='yes' />
+                <param name='language' value='es-ES' />
+            </object>
+        </div>
+    </div>
 
-<div class="espacio"></div> <!-- Espacio de 10px -->
-
-        
     <div class="espacio"></div> <!-- Espacio de 10px -->
-<!-- Contenedor principal del carrusel -->
-    
+
+    <div class="divisor-container">
+        <!-- Contenedor principal del carrusel -->
         <div class="contenedorimage-container">
             <div class="slider">
                 <iframe src="Graficas/homfemenino.html" title="Gráfico Femenino"></iframe>
@@ -73,117 +60,83 @@
         </div>
     </div>
 
+    <div class="espacio"></div> <!-- Espacio de 10px -->
 
-
- <!-- Inicia la encuesta -->
-  <form
-  action="https://formspree.io/f/mldrkvjb"
-  method="POST"
->
-    <div class="contenedorimage-container">
-  <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar la serie de tiempo?</h3>
-         </div>  
-  <div class="toggle-bar">
-    <input type="radio" id="view-lineas" name="map-presentation" value="Lineas de tiempo" checked>
-    <label for="view-lineas">Lineas</label>
-    <input type="radio" id="view-Mapa" name="map-presentation" value="Mapas de colores">
-    <label for="view-Mapa">Mapa</label>
-  </div>    
-    
-<div class="espacio"></div> <!-- Espacio de 10px -->
-    <div class="divisor-container">
-    <label for="chart-select">Selecciona un gráfico:</label>
-    <select id="chart-select" onchange="changeChart(this.value)">
-        <option value="Graficas/homfemenino.html">Femenino</option>
-        <option value="Graficas/hommasculino.html">Masculino</option>
-        <option value="Graficas/homtotal.html">Total</option>
-    </select>
-    <iframe id="chart-iframe" src="Graficas/homfemenino.html" style="width: 100%; height: 600px; border: none;"></iframe>
-    
-   <!-- <div class="toggle-container">
-        <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar el mapa?</h3>
+    <!-- Inicia la encuesta -->
+    <form action="https://formspree.io/f/mldrkvjb" method="POST">
+        <div class="divisor-container">
+            <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar la serie de tiempo?</h3>
+        </div>  
         <div class="toggle-bar">
-            <input type="radio" id="view-buttons" name="view-toggle" value="buttons" checked onclick="toggleView('buttons')">
-            <label for="view-buttons">Botones</label>
-            <input type="radio" id="view-slider" name="view-toggle" value="slider" onclick="toggleView('slider')">
-            <label for="view-slider">Carrusel</label>
-        </div>--> 
-        
+            <input type="radio" id="view-lineas" name="map-presentation" value="Lineas de tiempo" checked>
+            <label for="view-lineas">Líneas</label>
+            <input type="radio" id="view-Mapa" name="map-presentation" value="Mapas de colores">
+            <label for="view-Mapa">Mapa</label>
+        </div>    
 
-      <div class="divisor-container">
-    <h2>Gráfico 3D de violencia reportada por adolescentes</h2>
-    <iframe id="chart-iframe" src="Graficas/violencia3d.html" style="width: 90%; height: 600px; border: none;"></iframe>
-    </div>
-      <div class="divisor-container">
-    <h2>Gráfico de pie de violencia reportada</h2>
-    <iframe id="chart-iframe" src="Graficas/violenciapie.html" style="width: 100%; height: 600px; border: none;"></iframe>
-    </div>
-      <div class="divisor-container">
-    <h2>Gráfico de waffle de violencia reportada</h2>
-    <iframe id="chart-iframe" src="Graficas/waffle.html" style="width: 100%; height: 600px; border: none;"></iframe>
-    </div>
-    
-   <!--  <div class="toggle-container">
+        <div class="espacio"></div> <!-- Espacio de 10px -->
+        <div class="divisor-container">
+            <label for="chart-select">Selecciona un gráfico:</label>
+            <select id="chart-select" onchange="changeChart(this.value)">
+                <option value="Graficas/homfemenino.html">Femenino</option>
+                <option value="Graficas/hommasculino.html">Masculino</option>
+                <option value="Graficas/homtotal.html">Total</option>
+            </select>
+            <iframe id="chart-iframe" src="Graficas/homfemenino.html" style="width: 100%; height: 600px; border: none;"></iframe>
+        </div>
+
+        <div class="divisor-container">
+            <h2>Gráfico 3D de violencia reportada por adolescentes</h2>
+            <iframe id="chart-iframe" src="Graficas/violencia3d.html" style="width: 90%; height: 600px; border: none;"></iframe>
+        </div>
+
+        <div class="divisor-container">
+            <h2>Gráfico de pie de violencia reportada</h2>
+            <iframe id="chart-iframe" src="Graficas/violenciapie.html" style="width: 100%; height: 600px; border: none;"></iframe>
+        </div>
+
+        <div class="divisor-container">
+            <h2>Gráfico de waffle de violencia reportada</h2>
+            <iframe id="chart-iframe" src="Graficas/waffle.html" style="width: 100%; height: 600px; border: none;"></iframe>
+        </div>
+
         <h3>¿Cuál gráfico consideras más eficaz?</h3>
         <div class="toggle-bar">
-            <input type="radio" id="view-3d" name="view-toggle" value="3d" checked onclick="toggleView('3d')">
+            <input type="radio" id="view-3d" name="chart-type" value="3d" checked>
             <label for="view-3d">Mapa 3D</label>
-            <input type="radio" id="view-pie" name="view-toggle" value="pie" onclick="toggleView('pie')">
+            <input type="radio" id="view-pie" name="chart-type" value="pie">
             <label for="view-pie">Pie interactivo</label>
-            <input type="radio" id="view-wa" name="view-toggle" value="wa" onclick="toggleView('wa')">
+            <input type="radio" id="view-wa" name="chart-type" value="wa">
             <label for="view-wa">Waffle</label>
         </div>
-    </div>--> 
+        <button type="submit">Send</button>
+    </form>
 
+    <!-- Bloque de contacto -->
+    <section id="contact">
+        <div class="container">
+            <h2>Contacto</h2>
+            <div class="contact-info">
+                <!-- Contrataciones -->
+                <div class="contact-item">
+                    <i class="fa fa-phone"></i> <!-- Ícono de teléfono -->
+                    <p>Contrataciones: <a href="tel:+1226462165">1226462165</a></p>
+                </div>
 
-<!-- modify this form HTML and place wherever you want your form --> 
+                <!-- Donaciones -->
+                <div class="contact-item">
+                    <i class="fa fa-globe"></i> <!-- Ícono de globo como alternativa -->
+                    <p>Donaciones: <a href="https://www.paypal.com">PayPal</a></p>
+                </div>
 
-   
-    
-  <h3>¿Cuál gráfico consideras más eficaz?</h3>
-  <div class="toggle-bar">
-    <input type="radio" id="view-3d" name="chart-type" value="3d" checked>
-    <label for="view-3d">Mapa 3D</label>
-    <input type="radio" id="view-pie" name="chart-type" value="pie">
-    <label for="view-pie">Pie interactivo</label>
-    <input type="radio" id="view-wa" name="chart-type" value="wa">
-    <label for="view-wa">Waffle</label>
-  </div>
-  
-<button type="submit">Send</button>
-</form>
-
-      
-
-<!--bloque de contacto -->
-<section id="contact">
-    <div class="container">
-        <h2>Contacto</h2>
-        
-        <div class="contact-info">
-            <!-- Contrataciones -->
-            <div class="contact-item">
-                <i class="fa fa-phone"></i> <!-- Ícono de teléfono -->
-                <p>Contrataciones: <a href="tel:+1226462165">1226462165</a></p>
-            </div>
-            
-            <!-- Donaciones -->
-            <div class="contact-item">
-                <i class="fa fa-globe"></i> <!-- Ícono de globo como alternativa -->
-                <p>Donaciones: <a href="https://www.paypal.com">PayPal</a></p>
-            </div>
-
-            <!-- Clases -->
-            <div class="contact-item">
-                <i class="fa fa-calendar"></i> <!-- Ícono de calendario -->
-                <p>Doy clases los jueves<br>no cobro mucho</p>
+                <!-- Clases -->
+                <div class="contact-item">
+                    <i class="fa fa-calendar"></i> <!-- Ícono de calendario -->
+                    <p>Doy clases los jueves<br>no cobro mucho</p>
+                </div>
             </div>
         </div>
-    </div>
-</section>
-
-  
+    </section>
 
 </body>
-
 </html>
