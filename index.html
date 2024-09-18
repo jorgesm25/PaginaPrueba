@@ -23,7 +23,8 @@
 
 
     <h1>Gráficos de Homicidios en México</h1>
-
+  <!-- TABLEAU -->
+  <div class="divisor-container">
 <div class='tableauPlaceholder' id='viz1726682336668' style='position: relative; width: 50%; height: 400px;'>
     <noscript>
         <a href='#'>
@@ -44,6 +45,7 @@
         <param name='language' value='es-ES' />
     </object>
 </div>
+</div>
 <script type='text/javascript'>
     var divElement = document.getElementById('viz1726682336668');
     var vizElement = divElement.getElementsByTagName('object')[0];
@@ -53,7 +55,9 @@
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
 </script>
-
+    
+<div class="espacio"></div> <!-- Espacio de 10px -->
+    
     <label for="chart-select">Selecciona un gráfico:</label>
     <select id="chart-select" onchange="changeChart(this.value)">
         <option value="Graficas/homfemenino.html">Femenino</option>
