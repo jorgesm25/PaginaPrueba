@@ -83,36 +83,15 @@
     <div class="espacio"></div> <!-- Espacio de 10px -->
 
     <!-- Contenedor del carrusel -->
-<div class="swiper-container">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide">
-            <iframe src="Graficas/homfemenino.html" title="Gráfico Femenino"></iframe>
-        </div>
-        <div class="swiper-slide">
-            <iframe src="Graficas/hommasculino.html" title="Gráfico Masculino"></iframe>
-        </div>
-        <div class="swiper-slide">
-            <iframe src="Graficas/homtotal.html" title="Gráfico Total"></iframe>
-        </div>
+<div class="contenedorimage-container">
+    <div class="slider">
+        <iframe src="Graficas/homfemenino.html" title="Gráfico Femenino"></iframe>
+        <iframe src="Graficas/hommasculino.html" title="Gráfico Masculino"></iframe>
+        <iframe src="Graficas/homtotal.html" title="Gráfico Total"></iframe>
     </div>
-    <!-- Agrega botones de navegación -->
-    <div class="swiper-pagination"></div>
-    <div class="swiper-button-next"></div>
-    <div class="swiper-button-prev"></div>
+    <button class="prev" onclick="prevImage()">&#9665; Ant.</button>
+    <button class="next" onclick="nextImage()">Sig. &#9655;</button>
 </div>
-
-<script>
-    var swiper = new Swiper('.swiper-container', {
-        pagination: {
-            el: '.swiper-pagination',
-        },
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-    });
-</script>
-
 
    <!-- <div class="toggle-container">
         <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar el mapa?</h3>
