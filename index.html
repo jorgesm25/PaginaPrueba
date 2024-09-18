@@ -79,9 +79,9 @@
             <h3>De las dos opciones mostradas anteriormente, ¿cuál consideras que es más eficaz para presentar la serie de tiempo?</h3>
         </div>  
         <div class="toggle-bar">
-            <input type="radio" id="view-lineas" name="map-presentation" value="Lineas de tiempo" checked>
+            <input type="radio" id="view-lineas" name="serie-presentation" value="Lineas de tiempo" checked>
             <label for="view-lineas">Líneas</label>
-            <input type="radio" id="view-Mapa" name="map-presentation" value="Mapas de colores">
+            <input type="radio" id="view-Mapa" name="serie-presentation" value="Mapas de colores">
             <label for="view-Mapa">Mapa</label>
         </div>    
 
@@ -121,13 +121,15 @@
             <iframe id="chart-iframe" src="Graficas/waffle.html" style="width: 100%; height: 600px; border: none;"></iframe>
         </div>
 
-        <h3>¿Cuál gráfico consideras más eficaz?</h3>
+        <div class="divisor-container">
+        <h3>¿Cuál gráfico consideras más eficaz para represetar los diferentes tipos de violencia?</h3>
+             </div>
         <div class="toggle-bar">
-            <input type="radio" id="view-3d" name="chart-type" value="3d" checked>
+            <input type="radio" id="view-3d" name="chart-type" value="Grafico 3D" checked>
             <label for="view-3d">Mapa 3D</label>
-            <input type="radio" id="view-pie" name="chart-type" value="pie">
+            <input type="radio" id="view-pie" name="chart-type" value="Grafico de pie">
             <label for="view-pie">Pie interactivo</label>
-            <input type="radio" id="view-wa" name="chart-type" value="wa">
+            <input type="radio" id="view-wa" name="chart-type" value="Grafico de Waffle">
             <label for="view-wa">Waffle</label>
         </div>
         <button type="submit">Send</button>
