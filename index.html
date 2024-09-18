@@ -55,7 +55,8 @@
     scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';
     vizElement.parentNode.insertBefore(scriptElement, vizElement);
 </script>
-    
+
+<div class="espacio"></div> <!-- Espacio de 10px -->
 <div class="espacio"></div> <!-- Espacio de 10px -->
     <div class="divisor-container">
     <label for="chart-select">Selecciona un gráfico:</label>
@@ -89,8 +90,8 @@
                 <iframe src="Graficas/hommasculino.html" title="Gráfico Masculino"></iframe>
                 <iframe src="Graficas/homtotal.html" title="Gráfico Total"></iframe>
             </div>
-            <button class="prev" onclick="prevImage()">&#9665; Ant.</button>
-            <button class="next" onclick="nextImage()">Sig. &#9655;</button>
+            <button class="button" onclick="prevImage()">&#9665; Ant.</button>
+            <button class="button" onclick="nextImage()">Sig. &#9655;</button>
         </div>
     </div>
 
